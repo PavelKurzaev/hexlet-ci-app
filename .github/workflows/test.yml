@@ -5,13 +5,13 @@ on:
 	push
 	
 jobs:
-	Project Setup:
-	runs-on: ubuntu-latest
-	steps:
+      Project Setup:
+      runs-on: ubuntu-latest
+      steps:
       - uses: actions/checkout@v2
       - name: Build the project  
       - run: make setup
       - run: make start
       - run: make test
       - run: make lint
-	
+      
