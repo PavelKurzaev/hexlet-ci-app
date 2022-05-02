@@ -9,8 +9,10 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v2
-      - name: Build the project  
-        run: make setup
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'        run: make setup
       
       Project Run:
       	needs: Project Setup
