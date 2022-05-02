@@ -5,18 +5,31 @@ on:
 	push
 	
 jobs:
-      name: Project Setup
+      Project Setup:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v2
       - name: Build the project  
-      run: make setup
-      name: Project Run 
+        run: make setup
+      
+      Project Run:
       	needs: Project Setup
       - run: make start
-      name: Project Test
-      	needs: Project Test
-      - run: make test
-      name: Lint
-      - run: make lint
       
+      Project Test:
+      	needs: Project Run
+      - run: make test
+      
+      Lint:
+      - run: make lint
+    
+    security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: 3e7d0bc4-471d-4f4c-9050-c47b0ea31aad
+	 
+	
