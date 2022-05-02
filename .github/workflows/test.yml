@@ -1,0 +1,26 @@
+name:
+	Test_Workflow
+
+on:
+	push
+	
+jobs:
+	Project Setup:
+	runs-on: ubuntu-latest
+	steps:
+	- name: Build the project
+	- run: make setup
+	- run: make start
+	
+	Project Check:
+	runs-on: ubuntu-latest
+	steps:
+	- name: Run tests
+	- run: make test
+	
+	Lint Test:
+	runs-on: ubuntu-latest
+	steps:
+	- name: Check the Code
+	- run: make lint
+	
