@@ -5,13 +5,18 @@ on:
 	push
 	
 jobs:
-      Project Setup:
+      name: Project Setup
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v2
       - name: Build the project  
-       run: make setup
+      run: make setup
+      name: Project Run 
+      	needs: Project Setup
       - run: make start
+      name: Project Test
+      	needs: Project Test
       - run: make test
+      name: Lint
       - run: make lint
       
