@@ -1,5 +1,5 @@
 name:
-	Test_Workflow
+	TestWorkflow
 
 on:
 	push
