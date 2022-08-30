@@ -1,9 +1,8 @@
-name:
-	TestWorkflow
+name: TestWorkflow
 
 on:
 	push
-	
+
 jobs:
       Project Setup:
       runs-on: ubuntu-latest
