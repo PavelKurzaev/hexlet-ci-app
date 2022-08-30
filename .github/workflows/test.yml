@@ -1,39 +1,40 @@
-name: 
-    Test_Workflow
-on: push
-jobs:
-    ProjectSetup:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v3
-          with:
-            cache: 'npm'
-            cache-dependency-path: '**/package-lock.json'
-        - run: make setup
-     
-    ProjectRun:
-        runs-on: ubuntu-latest
-        needs: ProjectSetup
-        steps: 
-        - run: make start
-  
-    ProjectTest:
-        runs-on: ubuntu-latest
-        needs: ProjectRun
-        steps:
-        - run: make test
-
-    Lint:
-        runs-on: ubuntu-latest
-        steps:
-        - run: make lint
-
-    Security:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@master
-        - name: Run Snyk to check for vulnerabilities
-          uses: snyk/actions/node@master
-          env:
-            SNYK_TOKEN: 3e7d0bc4-471d-4f4c-9050-c47b0ea31aad
+# name: 
+#    Test_Workflow
+#on: push
+#jobs:
+#    ProjectSetup:
+#        runs-on: ubuntu-latest
+#        steps:
+#        - uses: actions/checkout@v2
+#        - uses: actions/setup-node@v3
+#          with:
+#            cache: 'npm'
+#            cache-dependency-path: '**/package-lock.json'
+#        - run: make setup
+#
+#    ProjectRun:
+#        runs-on: ubuntu-latest
+#        needs: ProjectSetup
+#        steps: 
+#        - run: make start
+#
+#    ProjectTest:
+#        runs-on: ubuntu-latest
+#        needs: ProjectRun
+#        steps:
+#        - run: make test
+#
+#    Lint:
+#        runs-on: ubuntu-latest
+#        steps:
+#        - run: make lint
+#
+#    Security:
+#        runs-on: ubuntu-latest
+#        steps:
+#        - uses: actions/checkout@master
+#        - name: Run Snyk to check for vulnerabilities
+#          uses: snyk/actions/node@master
+#          env:
+#            SNYK_TOKEN: 3e7d0bc4-471d-4f4c-9050-c47b0ea31aad
+#
