@@ -13,16 +13,19 @@ jobs:
         - run: make setup
      
     ProjectRun:
+        runs-on: ubuntu-latest
         needs: ProjectSetup
         steps: 
         - run: make start
   
     ProjectTest:
+        runs-on: ubuntu-latest
         needs: ProjectRun
         steps:
         - run: make test
 
     Lint:
+        runs-on: ubuntu-latest
         steps:
         - run: make lint
 
