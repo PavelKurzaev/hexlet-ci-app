@@ -1,8 +1,8 @@
-name: TestWorkflow
+name: Test_Workflow
 on: push
 jobs:
   ProjectSetup:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v3
