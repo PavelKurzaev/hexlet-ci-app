@@ -3,7 +3,9 @@ name:
 on: push
 jobs:
     Blanc:
-        run echo "Test"
+        runs-on: ubuntu-latest
+        steps:
+        - run: echo "Test"
 #    ProjectSetup:
 #        runs-on: ubuntu-latest
 #        steps:
