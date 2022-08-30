@@ -1,7 +1,7 @@
-name: TestWorkflow
+name:	TestWorkflow
 
-on:
-	push
+on: 
+	- push
 
 jobs:
       Project Setup:
@@ -11,11 +11,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'        run: make setup
+          cache-dependency-path: '**/package-lock.json'
+      - run: make setup
       
       Project Run:
       	needs: Project Setup
-      - run: make start
+     - run: make start
       
       Project Test:
       	needs: Project Run
