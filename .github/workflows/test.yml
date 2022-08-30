@@ -13,7 +13,8 @@ jobs:
      
     ProjectRun:
         needs: ProjectSetup
-        run: make start
+        steps:
+        - run: make start
   
     ProjectTest:
         needs: ProjectRun
@@ -21,7 +22,8 @@ jobs:
         - run: make test
 
     Lint:
-        run: make lint
+        steps:
+        - run: make lint
 
     Security:
         runs-on: ubuntu-latest
