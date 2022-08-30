@@ -16,7 +16,7 @@ jobs:
       
       Project Run:
       	needs: Project Setup
-     - run: make start
+          run: make start
       
       Project Test:
       	needs: Project Run
