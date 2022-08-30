@@ -1,7 +1,7 @@
 name:	TestWorkflow
 
 on: 
-	- push
+     - push
 
 jobs:
       Project Setup:
