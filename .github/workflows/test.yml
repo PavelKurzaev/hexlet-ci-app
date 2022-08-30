@@ -17,7 +17,8 @@ jobs:
   
     ProjectTest:
         needs: ProjectRun
-        run: make test
+        steps:
+            run: make test
 
     Lint:
         run: make lint
