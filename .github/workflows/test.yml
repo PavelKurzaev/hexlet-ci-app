@@ -1,6 +1,6 @@
-# name: 
-#    Test_Workflow
-#on: push
+name: 
+    Test_Workflow
+on: push
 #jobs:
 #    ProjectSetup:
 #        runs-on: ubuntu-latest
